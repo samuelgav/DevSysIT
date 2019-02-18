@@ -10,7 +10,7 @@
 			window.categoryId = '';
 		  </script>
 	      <ol class="breadcrumb">
-	        <li><a href="${contextRoot}/home"><i class="fa fa-dashboard"></i> Home</a></li>
+	        <li><a href="${contextRoot}/home"><i class="fa fa-home"></i> Home</a></li>
 	        <li class="active">Todos</li>
 	      </ol>
       </c:if>
@@ -20,7 +20,7 @@
 			window.categoryId = '${category.id}';
 		  </script>
 	      <ol class="breadcrumb">
-	        <li><a href="${contextRoot}/home"><i class="fa fa-dashboard"></i> Home</a></li>
+	        <li><a href="${contextRoot}/home"><i class="fa fa-home"></i> Home</a></li>
 	        <li class="active">Categoria</li>
 	        <li class="active">${category.name}</li>
 	      </ol>

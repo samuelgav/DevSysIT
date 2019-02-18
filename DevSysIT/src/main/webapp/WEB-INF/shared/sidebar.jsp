@@ -125,6 +125,12 @@
           </ul>
         </li>
         
+        <li id="manageProduct">
+          <a href="${contextRoot}/manage/product">
+            <i class="fa fa-laptop"></i> <span>Admin Product</span>            
+          </a>
+        </li>
+        
         <li id="about">
           <a href="${contextRoot}/about">
             <i class="fa fa-laptop"></i> <span>About</span>            

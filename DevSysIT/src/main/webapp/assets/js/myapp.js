@@ -1,4 +1,6 @@
 $(function() {
+
+	$('.select2').select2()
 	
 	switch (menu) {
 	case 'Home':
@@ -13,6 +15,9 @@ $(function() {
 	case 'All Products':
 		$('#productos').addClass('active treeview');
 		$('#listProducts').addClass('active');
+		break;
+	case 'Product Management':
+		$('#manageProduct').addClass('active');
 		break;
 	case 'Product by Category':
 		$('#productos').addClass('active treeview');

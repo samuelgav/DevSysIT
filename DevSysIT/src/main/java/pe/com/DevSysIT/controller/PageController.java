@@ -7,11 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-
 import pe.com.DevSysIT.dao.CategoryDao;
 import pe.com.DevSysIT.dao.ProductDao;
 import pe.com.DevSysIT.dto.Category;
+import pe.com.DevSysIT.dto.Product;
+import pe.com.DevSysIT.exception.ProductNotFoundException;
 
 
 
@@ -81,4 +81,20 @@ public class PageController {
 		return mv;				
 	}
 
+	
+	@RequestMapping(value = "/show/{id}/product") 
+	public ModelAndView showSingleProduct(@PathVariable int id) throws ProductNotFoundException {
+		ModelAndView mv = new ModelAndView("page");		
+		Product product = productDAO.get(id);		
+		if(product == null) throw new ProductNotFoundException();		
+		// update the view count
+		product.setViews(product.getViews() + 1);
+		productDAO.update(product);		
+		mv.addObject("title", product.getName());
+		//passing the list of categories
+		mv.addObject("categories", categoryDAO.list());
+		mv.addObject("product", product);		
+		mv.addObject("userClickShowProduct", true);		
+		return mv;		
+	}
 }

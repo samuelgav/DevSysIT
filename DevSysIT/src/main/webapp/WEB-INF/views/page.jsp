@@ -28,6 +28,11 @@
   <link rel="stylesheet" href="${css}/ionicons.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="${css}/dataTables.bootstrap.min.css">  
+  
+  <!-- Select2 -->
+  <link rel="stylesheet" href="${css}/select2.min.css">
+  
+  
   <!-- Theme style -->
   <link rel="stylesheet" href="${css}/AdminLTE.min.css">
   <!-- Material Design -->
@@ -79,6 +84,15 @@
 				<%@include file="listProducts.jsp"%>
 			</c:if>
 			
+			<!-- Load only when user clicks show product -->
+			<c:if test="${userClickShowProduct == true}">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>
+			
+			<!-- Load only when user clicks manage product -->
+			<c:if test="${userClickManageProduct == true}">
+				<%@include file="manageProduct.jsp"%>
+			</c:if>
 			
 			
   </div>
@@ -106,6 +120,8 @@
 <script>
     $.material.init();
 </script>
+<!-- Select2 -->
+<script src="${js}/select2.full.min.js"></script>
 <!-- DataTables -->
 <script src="${js}/jquery.dataTables.min.js"></script>
 <script src="${js}/dataTables.bootstrap.min.js"></script>
