@@ -2,7 +2,7 @@
 
 <section class="content-header">
 	<h1>
-		Admin Products<small>formulario</small>
+		Admin Product<small>formulario</small>
 	</h1>
 	<ol class="breadcrumb">
 		<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
@@ -16,7 +16,7 @@
 	<c:if test="${not empty message}">
 		<div class="row">
 			<div class="col-xs-12 col-md-offset-2 col-md-8">
-				<div class="alert alert-info">${message}</div>
+				<div class="alert alert-info fade in">${message}</div>
 			</div>
 		</div>
 	</c:if>
@@ -151,8 +151,48 @@
           <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
-	
-<hr/>	
-	<h2>Available Products</h2>
-	<hr/>
+
+<div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Available Products</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="productsTable" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Id</th>
+				  <th>&#160;</th>
+				  <th>Name</th>
+				  <th>Brand</th>
+				  <th>Qty. Avail</th>
+				  <th>Unit Price</th>
+				  <th>Activate</th>				
+				  <th>Edit</th>
+                </tr>
+                </thead>               
+                <tfoot>
+                <tr>
+                  <th>Id</th>
+				  <th>&#160;</th>
+				  <th>Name</th>
+				  <th>Brand</th>
+				  <th>Qty. Avail</th>
+				  <th>Unit Price</th>
+				  <th>Activate</th>				
+				  <th>Edit</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->	
+
 </section>

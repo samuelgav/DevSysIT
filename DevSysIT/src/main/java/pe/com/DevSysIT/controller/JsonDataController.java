@@ -42,5 +42,12 @@ public class JsonDataController {
 	public List<Product> getMostPurchasedProducts() {		
 		return productDAO.getProductsByParam("purchases", 5);				
 	}
+	
+	@RequestMapping("/admin/all/products")
+	@ResponseBody
+	public List<Product> getAllProductsList() {		
+		return productDAO.list();
+				
+	}
 
 }

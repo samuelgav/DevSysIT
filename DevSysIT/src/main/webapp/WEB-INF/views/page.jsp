@@ -106,6 +106,9 @@
 
 <!-- jQuery 3 -->
 <script src="${js}/jquery.min.js"></script>
+
+<script src="${js}/jquery.validate.js"></script>
+
 <!-- jQuery UI 1.11.4 -->
 <script src="${js}/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -125,6 +128,8 @@
 <!-- DataTables -->
 <script src="${js}/jquery.dataTables.min.js"></script>
 <script src="${js}/dataTables.bootstrap.min.js"></script>
+<!-- DataTable Bootstrap Script -->
+<script src="${js}/bootbox.min.js"></script>
 <!-- FastClick -->
 <script src="${js}/fastclick.js"></script>
 <!-- AdminLTE App -->
