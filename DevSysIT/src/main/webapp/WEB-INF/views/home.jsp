@@ -100,7 +100,7 @@
 					<div class="box-comment">
 						<div class="comment-text">
 							<span class="username"> {{product.name}} <span
-								class="text-muted pull-right">&#8377;
+								class="text-muted pull-right">$
 									{{product.unitPrice}}</span>
 							</span>
 							<!-- /.username -->
@@ -151,7 +151,7 @@
 					<div class="box-comment">
 						<div class="comment-text">
 							<span class="username"> {{product.name}} <span
-								class="text-muted pull-right">&#8377;
+								class="text-muted pull-right">$
 									{{product.unitPrice}}</span>
 							</span>
 							<!-- /.username -->

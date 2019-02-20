@@ -75,7 +75,7 @@ $(function() {
 							{
 								data : 'unitPrice',
 								mRender : function(data, type, row) {
-									return '&#8377; ' + data
+									return '$ ' + data
 								}
 							},
 							{
@@ -101,13 +101,20 @@ $(function() {
 											+ '/show/'
 											+ data
 											+ '/product" class="btn bg-navy btn-flat margin"><span class="glyphicon glyphicon-eye-open"></span></a> &#160;';
-									str += '<a href="'
-											+ window.contextRoot
-											+ '/manage/'
-											+ data
-											+ '/product" class="btn bg-purple btn-flat margin"><span class="glyphicon glyphicon-pencil"></span></a>';
+									
+									if (row.quantity < 1) {
+										str += '<a href="javascript:void(0)" class="btn bg-blue disabled"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
+									} else {
+
+										str += '<a href="'
+												+ window.contextRoot
+												+ '/cart/add/'
+												+ data
+												+ '/product" class="btn bg-blue"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
+									}
 									return str;
 								}
+								
 							} ]
 				});
 	}

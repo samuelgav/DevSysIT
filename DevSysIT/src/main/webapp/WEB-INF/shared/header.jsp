@@ -15,10 +15,14 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <!-- Notifications: style can be found in dropdown.less -->          
-          <!-- Tasks: style can be found in dropdown.less -->          
-          <!-- User Account: style can be found in dropdown.less -->
+          
+            <li id="signup">
+	            <a href="${contextRoot}/membership">Registrarse</a>
+	        </li>
+			<li id="login">
+	             <a href="${contextRoot}/login">Login</a>
+	        </li>
+          
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="${img}/user-160x160.jpg" class="user-image" alt="User Image">
