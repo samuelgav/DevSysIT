@@ -15,7 +15,18 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
+	           
+	        <li id="about">
+	          <a href="${contextRoot}/about">
+	            <i class="fa fa-user-plus"></i> <span>Acerca de Nosotros</span>            
+	          </a>
+	        </li>
+	        
+	        <li id="contact">
+	          <a href="${contextRoot}/contact">
+	            <i class="fa fa-phone"></i> <span>Contacto</span>            
+	          </a>
+	        </li>
             <li id="signup">
 	            <a href="${contextRoot}/membership">Registrarse</a>
 	        </li>

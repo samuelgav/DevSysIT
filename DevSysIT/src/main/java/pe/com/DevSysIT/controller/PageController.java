@@ -19,7 +19,7 @@ import pe.com.DevSysIT.exception.ProductNotFoundException;
 @Controller
 public class PageController {
 
-	//private static final Logger logger = LoggerFactory.getLogger(PageController.class);
+	private static final Logger logger = LoggerFactory.getLogger(PageController.class);
 	
 	@Autowired
 	private CategoryDao categoryDAO;
@@ -31,6 +31,10 @@ public class PageController {
 	public ModelAndView index() {
 		ModelAndView mv=new ModelAndView("page");
 		mv.addObject("title","Home");
+		
+		logger.info("INFO");
+		logger.debug("DEBUG");
+		
 		mv.addObject("categories", categoryDAO.list());
 		mv.addObject("userClickHome", true);		
 		return mv;

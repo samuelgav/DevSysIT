@@ -44,18 +44,7 @@
             <i class="fa fa-desktop"></i> <span>Admin Product</span>            
           </a>
         </li>
-        
-        <li id="about">
-          <a href="${contextRoot}/about">
-            <i class="fa fa-laptop"></i> <span>Acerca de Nosotros</span>            
-          </a>
-        </li>
-        
-        <li id="contact">
-          <a href="${contextRoot}/contact">
-            <i class="fa fa-envelope"></i> <span>Contacto</span>            
-          </a>
-        </li>
+       
         </ul>
     </section>
     <!-- /.sidebar -->
