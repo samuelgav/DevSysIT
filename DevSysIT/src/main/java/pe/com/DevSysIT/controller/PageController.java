@@ -12,6 +12,7 @@ import pe.com.DevSysIT.dao.CategoryDao;
 import pe.com.DevSysIT.dao.ProductDao;
 import pe.com.DevSysIT.dto.Category;
 import pe.com.DevSysIT.dto.Product;
+import pe.com.DevSysIT.exception.CategoryNotFoundException;
 import pe.com.DevSysIT.exception.ProductNotFoundException;
 
 
@@ -32,8 +33,8 @@ public class PageController {
 		ModelAndView mv=new ModelAndView("page");
 		mv.addObject("title","Home");
 		
-		logger.info("INFO");
-		logger.debug("DEBUG");
+		logger.info("Inside PageController index method - INFO");
+		logger.debug("Inside PageController index method - DEBUG");
 		
 		mv.addObject("categories", categoryDAO.list());
 		mv.addObject("userClickHome", true);		
@@ -71,12 +72,15 @@ public class PageController {
 	}	
 	
 	@RequestMapping(value = "/show/category/{id}/products")
-	public ModelAndView showCategoryProducts(@PathVariable("id") int id) {		
+	public ModelAndView showCategoryProducts(@PathVariable("id") int id) throws CategoryNotFoundException {		
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title","Product by Category");
 		// categoryDAO to fetch a single category
 		Category category = null;
 		category = categoryDAO.get(id);
+		
+		if(category == null) throw new CategoryNotFoundException();
+		
 		//mv.addObject("title",category.getName());
 		//passing the list of categories
 		mv.addObject("categories", categoryDAO.list());
@@ -110,6 +114,15 @@ public class PageController {
 		mv.addObject("title", "Login");
 		return mv;
 	}
+	
+	
+	@RequestMapping(value = "/register")
+	public ModelAndView register() {		
+		ModelAndView mv = new ModelAndView("page");		
+		mv.addObject("title","register");				
+		return mv;				
+	}
+	
 	
 	
 }

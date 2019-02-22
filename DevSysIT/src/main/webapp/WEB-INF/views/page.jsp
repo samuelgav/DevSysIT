@@ -58,10 +58,10 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 	
-	<%@include file="../shared/header.jsp" %>
+	<%@include file="./shared/header.jsp" %>
   	
   	<!-- Left side column. contains the logo and sidebar -->
-  	<%@include file="../shared/sidebar.jsp" %>
+  	<%@include file="./shared/sidebar.jsp" %>
   
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -99,7 +99,7 @@
   </div>
   <!-- /.content-wrapper -->
   
-  <%@include file="../shared/footer.jsp" %>
+  <%@include file="./shared/footer.jsp" %>
 
   <div class="control-sidebar-bg"></div>
 </div>

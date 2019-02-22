@@ -2,7 +2,7 @@
     <!-- Logo -->
     <a href="${contextRoot}/home" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini">M<b>A</b>L</span>
+      <span class="logo-mini">D<b>E</b>V</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg">DEV<b>SYS</b>IT</span>
     </a>
@@ -28,7 +28,7 @@
 	          </a>
 	        </li>
             <li id="signup">
-	            <a href="${contextRoot}/membership">Registrarse</a>
+	            <a href="${contextRoot}/register">Registrarse</a>
 	        </li>
 			<li id="login">
 	             <a href="${contextRoot}/login">Login</a>
