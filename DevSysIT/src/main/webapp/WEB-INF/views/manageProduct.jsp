@@ -22,7 +22,7 @@
 	</c:if>
 
 	<div class="row">
-		<div class="col-md-offset-2 col-md-8">
+		<div class="col-md-offset-3 col-md-6">
 			<div class="box box-default">
 				<div class="box-header with-border">
 					<h3 class="box-title">Administracion</h3>
