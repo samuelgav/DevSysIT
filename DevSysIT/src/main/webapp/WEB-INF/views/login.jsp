@@ -33,6 +33,9 @@
 <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="${css}/all-md-skins.min.css">
+
+<link href="${css}/myapp.css" rel="stylesheet">
+
 <script>
 	window.menu = '${title}';
 	window.contextRoot = '${contextRoot}'
@@ -72,16 +75,15 @@
 						<div class="login-box-body">
 							<p class="login-box-msg">Inicio de Sesion</p>
 
-							<form action="../../index2.html" method="post">
-								<div class="form-group has-feedback">
-									<input type="text" class="form-control" placeholder="Email">
-									<span class="glyphicon glyphicon-user form-control-feedback"></span>
-								</div>
-								<div class="form-group has-feedback">
-									<input type="password" class="form-control"
-										placeholder="Password"> <span
-										class="glyphicon glyphicon-lock form-control-feedback"></span>
-								</div>
+							<form action="${contextRoot}/login" method="post" id="loginForm" >
+								  <div class="form-group has-feedback">
+							        <input type="text" class="form-control" name="username" id="username" placeholder="Email">
+							        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+							      </div>
+							      <div class="form-group has-feedback">
+							        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+							        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+							      </div>
 								<div class="row">
 									<div class="col-xs-7">
 										<div class="checkbox">
@@ -91,9 +93,7 @@
 									</div>
 									<!-- /.col -->
 									<div class="col-xs-5">
-										<button type="submit"
-											class="btn btn-primary btn-raised btn-block btn-flat">Sign
-											In</button>
+										<input type="submit" value="Login" class="btn btn-primary btn-raised btn-block btn-flat" />
 									</div>
 									<!-- /.col -->
 								</div>
@@ -115,6 +115,9 @@
 
 	<!-- jQuery 3 -->
 	<script src="${js}/jquery.min.js"></script>
+	
+	<script src="${js}/jquery.validate.js"></script>
+	
 	<!-- Bootstrap 3.3.7 -->
 	<script src="${js}/bootstrap.min.js"></script>
 	<!-- Material Design -->
@@ -131,5 +134,7 @@
 	<script src="${js}/adminlte.min.js"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="${js}/demo.js"></script>
+	
+	<script src="${js}/myapp.js"></script>
 </body>
 </html>

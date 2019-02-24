@@ -138,5 +138,12 @@
 <!-- AdminLTE for demo purposes -->
 <script src="${js}/demo.js"></script>
 <script src="${js}/myapp.js"></script>
+
+<script>
+$(function() {
+	$('.select2').select2()
+});
+</script>
+
 </body>
 </html>

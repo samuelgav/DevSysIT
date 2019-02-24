@@ -9,17 +9,23 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<context:component-scan base-package="pe.com.DevSysIT" />
+	
+	<http pattern="/resources/**" security="none" />
+
 	 <http>
-		<intercept-url pattern="/**" access="hasAuthority('USER')" />
-		<form-login />
+		<intercept-url pattern="/login" access="permitAll" />
+		<intercept-url pattern="/**" access="hasAuthority('USER')" />		
+		<form-login login-page="/login" />
 		<logout/>
 	</http>
 
 	<authentication-manager>
 		<authentication-provider>
- 			<user-service>
- 				<user name="samuel" password="123" authorities="USER, ADMIN"/>
- 			</user-service>	
+ 			<jdbc-user-service data-source-ref="dataSource"
+ 				users-by-username-query="select email, password, enabled from user_detail where email = ?"
+ 				authorities-by-username-query="select email, role from user_detail where email = ?"
+ 			/>	
  		</authentication-provider>
 	</authentication-manager>
 	
