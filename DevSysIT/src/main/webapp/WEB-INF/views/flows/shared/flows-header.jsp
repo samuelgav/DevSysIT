@@ -37,6 +37,9 @@
 <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="${css}/all-md-skins.min.css">
+
+<link rel="stylesheet" href="${css}/myapp.css">
+
 <script>
 	window.menu = '${title}';
 	window.contextRoot = '${contextRoot}'

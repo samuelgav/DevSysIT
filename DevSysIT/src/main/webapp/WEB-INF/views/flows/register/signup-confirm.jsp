@@ -16,34 +16,42 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            
+            <form class="form-horizontal">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label class="col-sm-4 control-label">Nombre Completo</label>
+                  <div class="col-sm-8">
+                    <h4>${registerModel.user.firstName} ${registerModel.user.lastName}</h4>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label class="col-sm-4 control-label">Email</label>
+                  <div class="col-sm-8">
+                    <h4>${registerModel.user.email}</h4>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">Example block-level help text here.</p>
+                  <label class="col-sm-4 control-label">Numero de contacto</label>
+                  <div class="col-sm-8">
+                    <h4>${registerModel.user.contactNumber}</h4>
+                  </div>
                 </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Rol</label>
+                  <div class="col-sm-8">
+                    <h4>${registerModel.user.role}</h4>
+                  </div>
                 </div>
+                
               </div>
               <!-- /.box-body -->
-
               <div class="box-footer">
                 <a href="${flowExecutionUrl}&_eventId_personal" class="btn btn btn-info pull-right">Edit</a>
               </div>
+              <!-- /.box-footer -->
             </form>
+        
           </div>
          </div>
 
@@ -55,35 +63,43 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            
+            <form class="form-horizontal">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label class="col-sm-4 control-label">Direccion Uno</label>
+                  <div class="col-sm-8">
+                    <h4>${registerModel.billing.addressLineOne}</h4>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label class="col-sm-4 control-label">Direccion Dos</label>
+                  <div class="col-sm-8">
+                    <h4>${registerModel.billing.addressLineTwo}</h4>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">Example block-level help text here.</p>
+                  <label class="col-sm-4 control-label">Ciudad y Codigo Postal</label>
+                  <div class="col-sm-8">
+                    <h4>${registerModel.billing.city} - ${registerModel.billing.postalCode}</h4>
+                  </div>
                 </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Estado y Pais</label>
+                  <div class="col-sm-8">
+                    <h4>${registerModel.billing.state} - ${registerModel.billing.country}</h4>
+                  </div>
                 </div>
+                
               </div>
               <!-- /.box-body -->
-
               <div class="box-footer">
                 <a href="${flowExecutionUrl}&_eventId_billing" class="btn btn btn-info pull-right">Edit</a>
               </div>
+              <!-- /.box-footer -->
             </form>
-          </div>
+            
+           </div>
          </div>
          
         </div>
@@ -91,7 +107,7 @@
         <div class="row">		
 			<div class="col-sm-4 col-sm-offset-4">			
 				<div class="text-center">				
-					<a href="${flowExecutionUrl}&_eventId_success" class="btn btn-lg bg-olive">Confirm</a>				
+					<a href="${flowExecutionUrl}&_eventId_submit" class="btn btn-lg bg-olive">Confirm</a>				
 				</div>			
 			</div>		
 		</div>
