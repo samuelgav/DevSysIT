@@ -64,6 +64,11 @@
 
 				<!-- Main content -->
 				<section class="content">
+				
+				  <c:if test="${not empty message}">
+				  	<div class="alert alert-danger">${message}</div>
+				  </c:if>
+				
 
 					<div class="login-box">
 						<div class="login-logo">
@@ -94,12 +99,13 @@
 									<!-- /.col -->
 									<div class="col-xs-5">
 										<input type="submit" value="Login" class="btn btn-primary btn-raised btn-block btn-flat" />
+										<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 									</div>
 									<!-- /.col -->
 								</div>
 							</form>
 
-							<a href="register.html" class="text-center">Registrar nuevo
+							<a href="${contextRoot}/register" class="text-center">Registrar nuevo
 								usuario</a>
 
 						</div>

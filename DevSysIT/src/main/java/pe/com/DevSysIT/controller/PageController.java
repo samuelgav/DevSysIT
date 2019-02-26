@@ -109,8 +109,13 @@ public class PageController {
 	
 	
 	@RequestMapping(value="/login")
-	public ModelAndView login() {
+	public ModelAndView login(@RequestParam(name="error",required=false)String error) {
 		ModelAndView mv= new ModelAndView("login");
+		
+		if(error !=null) {
+			mv.addObject("message", "Usuario y Password invalidos!");
+		}
+		
 		mv.addObject("title", "Login");
 		return mv;
 	}
@@ -120,6 +125,15 @@ public class PageController {
 	public ModelAndView register() {		
 		ModelAndView mv = new ModelAndView("page");		
 		mv.addObject("title","register");				
+		return mv;				
+	}
+	
+	@RequestMapping(value = "/access-denied")
+	public ModelAndView accessDenied() {		
+		ModelAndView mv = new ModelAndView("error");		
+		mv.addObject("errorTitle", "Aha! Caught You.");
+		mv.addObject("errorDescription", "Usted no esta autorizado para ver esta pagina!.");
+		mv.addObject("title", "403 - Acceso Denegado");		
 		return mv;				
 	}
 	

@@ -3,6 +3,7 @@ package pe.com.DevSysIT.handler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import pe.com.DevSysIT.dao.UserDao;
@@ -16,6 +17,9 @@ public class RegisterHandler {
 
 	@Autowired
 	private UserDao userDao;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
 	
 	public RegisterModel init() {
@@ -57,6 +61,9 @@ public class RegisterHandler {
 			cart.setUser(user);
 			user.setCart(cart);
 		}
+		
+		// encode the password
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		
 		//guardar usuario
 		userDao.add(user);
