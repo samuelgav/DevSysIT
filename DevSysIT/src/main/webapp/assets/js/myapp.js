@@ -17,6 +17,9 @@ $(function() {
 	case 'Product Management':
 		$('#manageProduct').addClass('active');
 		break;
+	case 'User Cart':
+		$('#userCart').addClass('active');
+		break;
 	case 'Product by Category':
 		$('#productos').addClass('active treeview');
 		$('#a_' + window.categoryId).addClass('active');		

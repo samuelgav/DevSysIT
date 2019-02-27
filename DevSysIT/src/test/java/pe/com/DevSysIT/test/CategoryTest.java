@@ -15,7 +15,10 @@ public class CategoryTest {
 	
 	public static void main(String[] args) {
 		context=new AnnotationConfigApplicationContext();
-		context.scan("pe.com.DevSysIT");
+		context.scan("pe.com.DevSysIT.config");
+		context.scan("pe.com.DevSysIT.dto");
+		context.scan("pe.com.DevSysIT.dao");
+		context.scan("pe.com.DevSysIT.daoimpl");
 		context.refresh();		
 		categoryDao=(CategoryDao)context.getBean("categoryDAO");
 		test=new CategoryTest();

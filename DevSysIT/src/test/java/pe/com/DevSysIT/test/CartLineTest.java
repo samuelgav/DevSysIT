@@ -26,7 +26,10 @@ public class CartLineTest {
 	
 	public static void main(String[] args) {
 		context=new AnnotationConfigApplicationContext();
-		context.scan("pe.com.DevSysIT");
+		context.scan("pe.com.DevSysIT.config");
+		context.scan("pe.com.DevSysIT.dto");
+		context.scan("pe.com.DevSysIT.dao");
+		context.scan("pe.com.DevSysIT.daoimpl");
 		context.refresh();
 		productDao=(ProductDao)context.getBean("productDAO");
 		userDao=(UserDao)context.getBean("userDAO");
@@ -37,7 +40,7 @@ public class CartLineTest {
 	
 	public void testCartLine() {
 		// obtenemos el usuario
-		user=userDao.getByEmail("gavidiamamani@gmail.com");
+		user=userDao.getByEmail("kn@gmail.com");
 		// traemos el carrito
 		cart=user.getCart();
 		// obtenemos el producto

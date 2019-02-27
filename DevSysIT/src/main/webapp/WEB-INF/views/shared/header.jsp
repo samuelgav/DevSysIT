@@ -40,7 +40,7 @@
 	        
 	        
           	<security:authorize access="isAuthenticated()">
-	          <li class="dropdown user user-menu">
+	          <li class="dropdown user user-menu" id="userCart">
 	            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
 	              <img src="${img}/user-160x160.jpg" class="user-image" alt="User Image">
 	              <span class="hidden-xs">${userModel.fullName}</span>
