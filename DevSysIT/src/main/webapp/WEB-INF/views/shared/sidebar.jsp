@@ -1,4 +1,6 @@
+<%@taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -8,7 +10,7 @@
           <img src="${img}/user-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Samuel Gavidia</p>
+          <p>${userModel.fullName}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>      
@@ -39,12 +41,14 @@
           </ul>
         </li>
         
-        <li id="manageProduct">
-          <a href="${contextRoot}/manage/product">
-            <i class="fa fa-desktop"></i> <span>Admin Product</span>            
-          </a>
-        </li>
-       
+        <security:authorize access="hasAuthority('ADMIN')">
+	        <li id="manageProduct">
+	          <a href="${contextRoot}/manage/product">
+	            <i class="fa fa-desktop"></i> <span>Admin Product</span>            
+	          </a>
+	        </li>
+        </security:authorize>
+        
         </ul>
     </section>
     <!-- /.sidebar -->

@@ -68,6 +68,10 @@
 				  <c:if test="${not empty message}">
 				  	<div class="alert alert-danger">${message}</div>
 				  </c:if>
+				  
+				  <c:if test="${not empty logout}">
+				  	<div class="alert alert-success">${logout}</div>
+				  </c:if>
 				
 
 					<div class="login-box">

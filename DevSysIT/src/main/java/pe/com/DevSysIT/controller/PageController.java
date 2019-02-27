@@ -1,8 +1,14 @@
 package pe.com.DevSysIT.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,8 +59,7 @@ public class PageController {
 	@RequestMapping(value = "/contact")
 	public ModelAndView contact() {		
 		ModelAndView mv = new ModelAndView("page");		
-		mv.addObject("title","Contact Us");
-		//passing the list of categories
+		mv.addObject("title","Contact Us");	
 		mv.addObject("categories", categoryDAO.list());
 		mv.addObject("userClickContact",true);		
 		return mv;				
@@ -65,7 +70,6 @@ public class PageController {
 	public ModelAndView showAllProducts() {		
 		ModelAndView mv = new ModelAndView("page");		
 		mv.addObject("title","All Products");		
-		//passing the list of categories
 		mv.addObject("categories", categoryDAO.list());
 		mv.addObject("userClickAllProducts",true);		
 		return mv;				
@@ -74,17 +78,11 @@ public class PageController {
 	@RequestMapping(value = "/show/category/{id}/products")
 	public ModelAndView showCategoryProducts(@PathVariable("id") int id) throws CategoryNotFoundException {		
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title","Product by Category");
-		// categoryDAO to fetch a single category
+		mv.addObject("title","Product by Category");		
 		Category category = null;
-		category = categoryDAO.get(id);
-		
+		category = categoryDAO.get(id);		
 		if(category == null) throw new CategoryNotFoundException();
-		
-		//mv.addObject("title",category.getName());
-		//passing the list of categories
-		mv.addObject("categories", categoryDAO.list());
-		// passing the single category object
+		mv.addObject("categories", categoryDAO.list());		
 		mv.addObject("category", category);
 		mv.addObject("userClickCategoryProducts",true);
 		return mv;				
@@ -96,11 +94,9 @@ public class PageController {
 		ModelAndView mv = new ModelAndView("page");		
 		Product product = productDAO.get(id);		
 		if(product == null) throw new ProductNotFoundException();		
-		// update the view count
 		product.setViews(product.getViews() + 1);
 		productDAO.update(product);		
-		mv.addObject("title", product.getName());
-		//passing the list of categories
+		mv.addObject("title", product.getName());		
 		mv.addObject("categories", categoryDAO.list());
 		mv.addObject("product", product);		
 		mv.addObject("userClickShowProduct", true);		
@@ -109,11 +105,16 @@ public class PageController {
 	
 	
 	@RequestMapping(value="/login")
-	public ModelAndView login(@RequestParam(name="error",required=false)String error) {
+	public ModelAndView login(@RequestParam(name="error",required=false)String error,
+							  @RequestParam(name="logout",required=false)String logout) {
 		ModelAndView mv= new ModelAndView("login");
 		
 		if(error !=null) {
 			mv.addObject("message", "Usuario y Password invalidos!");
+		}
+		
+		if(logout !=null) {
+			mv.addObject("logout", "Usuario deslogueado exitosamente!");
 		}
 		
 		mv.addObject("title", "Login");
@@ -137,6 +138,14 @@ public class PageController {
 		return mv;				
 	}
 	
-	
+
+	@RequestMapping(value = "/perform-logout")
+	public String logout(HttpServletRequest request, HttpServletResponse response) {		
+		Authentication authentication=SecurityContextHolder.getContext().getAuthentication();
+		if(authentication !=null) {
+			new SecurityContextLogoutHandler().logout(request, response, authentication);
+		}
+		return "redirect:/login?logout";				
+	}
 	
 }

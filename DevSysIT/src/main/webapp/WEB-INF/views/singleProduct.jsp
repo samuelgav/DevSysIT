@@ -32,6 +32,7 @@
 							Price: <strong> $ ${product.unitPrice}</strong>
 						</h4>
 						<hr />
+						
 						<c:choose>
 							<c:when test="${product.quantity < 1}">
 								<h4>
@@ -42,6 +43,31 @@
 								<h4>Qty. Available: ${product.quantity}</h4>
 							</c:otherwise>
 						</c:choose>
+						
+						<security:authorize access="hasAuthority('USER')">
+							<c:choose>
+								<c:when test="${product.quantity < 1}">
+									<a href="javascript:void(0)" class="btn bg-blue disabled"><strike>
+									<span class="glyphicon glyphicon-shopping-cart"></span> Agregar a carrito</strike>
+									</a>
+								</c:when>							
+								<c:otherwise>
+									<a href="${contextRoot}/cart/add/${product.id}/product" class="btn bg-blue">
+									<span class="glyphicon glyphicon-shopping-cart"></span> Agregar a carrito</a>
+								</c:otherwise>							
+							</c:choose>
+						</security:authorize>
+						
+						
+						<security:authorize access="hasAuthority('ADMIN')">
+							<a href="${contextRoot}/manage/${product.id}/product" class="btn bg-purple">
+									<span class="glyphicon glyphicon-pencil"></span> Editar</a>							
+						</security:authorize>
+						
+						
+						
+						
+						
 					</div>
 				</div>
 			</div>
