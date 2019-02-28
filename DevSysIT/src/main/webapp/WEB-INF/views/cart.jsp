@@ -1,4 +1,12 @@
 <section class="content">
+	
+	<c:if test="${not empty message}">		
+		<div class="alert alert-info">
+			<h3 class="text-center">${message}</h3>
+		</div>			
+	</c:if>
+	
+	
 	<c:choose>
 		<c:when test="${not empty cartLines}">
 			<div class="row">
@@ -41,16 +49,18 @@
 											</div>
 										</td>
 										<td data-th="Price">$ ${cartLine.buyingPrice}</td>
-										<td data-th="Quantity"><input type="number" value="${cartLine.productCount}"
+										<td data-th="Quantity">
+										<input type="number" value="${cartLine.productCount}" id="count_${cartLine.id}" min="1" max="3"
 											class="form-control text-center" ></td>
 										<td data-th="Subtotal" class="text-center">$ ${cartLine.total}</td>
 										<td class="actions" data-th="">
-											<button class="btn bg-blue btn-sm">
+											<button class="btn bg-blue btn-sm" name="refreshCart" value="${cartLine.id}"
+											>
 												<span class="glyphicon glyphicon-refresh"></span>
 											</button>
-											<button class="btn bg-red btn-sm">
+											<a class="btn bg-red btn-sm" href="${contextRoot}/cart/${cartLine.id}/delete" >
 												<span class="glyphicon glyphicon-trash"></span>
-											</button>
+											</a>
 										</td>
 									</tr>								
 								</c:forEach>	
