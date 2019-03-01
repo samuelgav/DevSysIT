@@ -33,7 +33,7 @@
           </a>
           <ul class="treeview-menu">
             <li id="listProducts"><a href="${contextRoot}/show/all/products"><i class="fa fa-circle-o"></i>Todos</a></li>
-            <c:forEach items="${categories}" var="category">
+            <c:forEach items="${categorias}" var="category">
             <li id="a_${category.id}">
             	<a href="${contextRoot}/show/category/${category.id}/products" id="a_${category.name}"><i class="fa fa-circle-o"></i>${category.name}</a>
             </li>

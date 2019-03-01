@@ -2,8 +2,8 @@ package pe.com.DevSysIT.model;
 
 import java.io.Serializable;
 
-import pe.com.DevSysIT.dto.Address;
-import pe.com.DevSysIT.dto.User;
+import pe.com.DevSysITBackend.dto.Address;
+import pe.com.DevSysITBackend.dto.User;
 
 public class RegisterModel implements Serializable{
 

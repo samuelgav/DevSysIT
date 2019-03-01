@@ -3,7 +3,7 @@ package pe.com.DevSysIT.validator;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import pe.com.DevSysIT.dto.Product;
+import pe.com.DevSysITBackend.dto.Product;
 
 public class ProductValidator implements Validator {
 

@@ -8,8 +8,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import pe.com.DevSysIT.dao.UserDao;
-import pe.com.DevSysIT.dto.User;
+import pe.com.DevSysITBackend.dao.UserDao;
+import pe.com.DevSysITBackend.dto.User;
 import pe.com.DevSysIT.model.UserModel;
 
 @ControllerAdvice

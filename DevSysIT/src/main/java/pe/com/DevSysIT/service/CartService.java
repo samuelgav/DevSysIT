@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-import pe.com.DevSysIT.dao.CartLineDao;
-import pe.com.DevSysIT.dto.Cart;
-import pe.com.DevSysIT.dto.CartLine;
-import pe.com.DevSysIT.dto.Product;
+import pe.com.DevSysITBackend.dao.CartLineDao;
+import pe.com.DevSysITBackend.dto.Cart;
+import pe.com.DevSysITBackend.dto.CartLine;
+import pe.com.DevSysITBackend.dto.Product;
 import pe.com.DevSysIT.model.UserModel;
 
 @Service("cartService")

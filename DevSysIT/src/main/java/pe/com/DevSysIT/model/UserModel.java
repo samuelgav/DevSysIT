@@ -2,7 +2,7 @@ package pe.com.DevSysIT.model;
 
 import java.io.Serializable;
 
-import pe.com.DevSysIT.dto.Cart;
+import pe.com.DevSysITBackend.dto.Cart;
 
 public class UserModel implements Serializable{
 

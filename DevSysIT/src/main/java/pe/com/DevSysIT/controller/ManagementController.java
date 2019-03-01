@@ -21,10 +21,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import pe.com.DevSysIT.util.FileUtil;
 import pe.com.DevSysIT.validator.ProductValidator;
-import pe.com.DevSysIT.dto.Category;
-import pe.com.DevSysIT.dao.CategoryDao;
-import pe.com.DevSysIT.dao.ProductDao;
-import pe.com.DevSysIT.dto.Product;
+import pe.com.DevSysITBackend.dto.Category;
+import pe.com.DevSysITBackend.dao.CategoryDao;
+import pe.com.DevSysITBackend.dao.ProductDao;
+import pe.com.DevSysITBackend.dto.Product;
 
 
 @Controller
@@ -41,8 +41,9 @@ public class ManagementController {
 	
 	@RequestMapping("/product")
 	public ModelAndView manageProduct(@RequestParam(name="success",required=false)String success) {	
-		ModelAndView mv = new ModelAndView("page");	
-		mv.addObject("title","Product Management");		
+		ModelAndView mv = new ModelAndView("page");		
+		mv.addObject("title","Product Management");
+		mv.addObject("categorias", categoryDAO.list());
 		mv.addObject("userClickManageProduct",true);		
 		Product nProduct = new Product();		
 		nProduct.setSupplierId(1);
@@ -62,9 +63,10 @@ public class ManagementController {
 	@RequestMapping("/{id}/product")
 	public ModelAndView manageProductEdit(@PathVariable int id) {	
 		ModelAndView mv = new ModelAndView("page");	
-		mv.addObject("title","Product Management");		
-		mv.addObject("userClickManageProduct",true);		
+		mv.addObject("title","Product Management");	
+		mv.addObject("categorias", categoryDAO.list());
 		mv.addObject("product", productDAO.get(id));
+		mv.addObject("userClickManageProduct",true);			
 		return mv;	
 	}
 	

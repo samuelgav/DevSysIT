@@ -4,8 +4,8 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow
                           http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
-		<var name="user" class="pe.com.DevSysIT.dto.User"/>
-		<var name="billing" class="pe.com.DevSysIT.dto.Address"/>
+		<var name="user" class="pe.com.DevSysITBackend.dto.User"/>
+		<var name="billing" class="pe.com.DevSysITBackend.dto.Address"/>
 
 		<on-start>
 			<evaluate expression="registerHandler.init()" result="flowScope.registerModel" />

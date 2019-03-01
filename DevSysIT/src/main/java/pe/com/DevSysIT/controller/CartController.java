@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import pe.com.DevSysIT.dao.CategoryDao;
+import pe.com.DevSysITBackend.dao.CategoryDao;
 import pe.com.DevSysIT.service.CartService;
 
 @Controller
@@ -44,7 +44,7 @@ public class CartController {
 		
 		mv.addObject("title", "User Cart");
 		mv.addObject("cartLines", cartService.getCartLines());
-		mv.addObject("categories", categoryDAO.list());
+		mv.addObject("categorias", categoryDAO.list());
 		mv.addObject("userClickShowCart", true);		
 		return mv;
 	}

@@ -6,10 +6,10 @@ import org.springframework.binding.message.MessageContext;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import pe.com.DevSysIT.dao.UserDao;
-import pe.com.DevSysIT.dto.Address;
-import pe.com.DevSysIT.dto.Cart;
-import pe.com.DevSysIT.dto.User;
+import pe.com.DevSysITBackend.dao.UserDao;
+import pe.com.DevSysITBackend.dto.Address;
+import pe.com.DevSysITBackend.dto.Cart;
+import pe.com.DevSysITBackend.dto.User;
 import pe.com.DevSysIT.model.RegisterModel;
 
 @Component

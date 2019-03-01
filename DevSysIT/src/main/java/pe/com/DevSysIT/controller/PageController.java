@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import pe.com.DevSysIT.dao.CategoryDao;
-import pe.com.DevSysIT.dao.ProductDao;
-import pe.com.DevSysIT.dto.Category;
-import pe.com.DevSysIT.dto.Product;
+import pe.com.DevSysITBackend.dao.CategoryDao;
+import pe.com.DevSysITBackend.dao.ProductDao;
+import pe.com.DevSysITBackend.dto.Category;
+import pe.com.DevSysITBackend.dto.Product;
 import pe.com.DevSysIT.exception.CategoryNotFoundException;
 import pe.com.DevSysIT.exception.ProductNotFoundException;
 
@@ -42,7 +42,7 @@ public class PageController {
 		logger.info("Inside PageController index method - INFO");
 		logger.debug("Inside PageController index method - DEBUG");
 		
-		mv.addObject("categories", categoryDAO.list());
+		mv.addObject("categorias", categoryDAO.list());
 		mv.addObject("userClickHome", true);		
 		return mv;
 	}
@@ -51,7 +51,7 @@ public class PageController {
 	public ModelAndView about() {		
 		ModelAndView mv = new ModelAndView("page");		
 		mv.addObject("title","About Us");
-		mv.addObject("categories", categoryDAO.list());
+		mv.addObject("categorias", categoryDAO.list());
 		mv.addObject("userClickAbout",true);		
 		return mv;				
 	}	
@@ -60,7 +60,7 @@ public class PageController {
 	public ModelAndView contact() {		
 		ModelAndView mv = new ModelAndView("page");		
 		mv.addObject("title","Contact Us");	
-		mv.addObject("categories", categoryDAO.list());
+		mv.addObject("categorias", categoryDAO.list());
 		mv.addObject("userClickContact",true);		
 		return mv;				
 	}
@@ -70,7 +70,7 @@ public class PageController {
 	public ModelAndView showAllProducts() {		
 		ModelAndView mv = new ModelAndView("page");		
 		mv.addObject("title","All Products");		
-		mv.addObject("categories", categoryDAO.list());
+		mv.addObject("categorias", categoryDAO.list());
 		mv.addObject("userClickAllProducts",true);		
 		return mv;				
 	}	
@@ -82,7 +82,7 @@ public class PageController {
 		Category category = null;
 		category = categoryDAO.get(id);		
 		if(category == null) throw new CategoryNotFoundException();
-		mv.addObject("categories", categoryDAO.list());		
+		mv.addObject("categorias", categoryDAO.list());		
 		mv.addObject("category", category);
 		mv.addObject("userClickCategoryProducts",true);
 		return mv;				
@@ -97,7 +97,7 @@ public class PageController {
 		product.setViews(product.getViews() + 1);
 		productDAO.update(product);		
 		mv.addObject("title", product.getName());		
-		mv.addObject("categories", categoryDAO.list());
+		mv.addObject("categorias", categoryDAO.list());
 		mv.addObject("product", product);		
 		mv.addObject("userClickShowProduct", true);		
 		return mv;		
