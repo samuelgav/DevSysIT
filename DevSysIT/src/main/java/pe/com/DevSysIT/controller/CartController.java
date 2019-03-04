@@ -31,11 +31,20 @@ public class CartController {
 			case "updated":
 				mv.addObject("message", "Linea de carrito fue actualizado correctamente");
 				break;
+			case "added":
+				mv.addObject("message", "Linea de carrito fue agregado correctamente");
+				break;
 			case "deleted":
 				mv.addObject("message", "Linea de carrito fue removido correctamente");
 				break;
 			case "error":
 				mv.addObject("message", "Ocurrio un problema!");
+				break;
+			case "maximum":
+				mv.addObject("message", "Maximum limit for the item has been reached!");
+				break;
+			case "unavailable":
+				mv.addObject("message", "Product quantity is not available!");					
 				break;
 			default:
 				break;
@@ -51,7 +60,7 @@ public class CartController {
 	
 	@RequestMapping("/{cartLineId}/update")
 	public String updateCart(@PathVariable int cartLineId, @RequestParam int count) {
-		String response=cartService.updateCartLine(cartLineId,count);
+		String response=cartService.manageCartLine(cartLineId,count);
 		return "redirect:/cart/show?"+response;		
 	}
 	
@@ -59,6 +68,12 @@ public class CartController {
 	@RequestMapping("/{cartLineId}/delete")
 	public String deleteCart(@PathVariable int cartLineId) {
 		String response=cartService.deleteCartLine(cartLineId);
+		return "redirect:/cart/show?"+response;		
+	}
+	
+	@RequestMapping("/add/{productId}/product")
+	public String addCart(@PathVariable int productId) {
+		String response=cartService.addCartLine(productId);
 		return "redirect:/cart/show?"+response;		
 	}
 	

@@ -70,7 +70,7 @@
 										<td class="text-center"><strong>Total $ ${userModel.cart.grandTotal}</strong></td>
 									</tr>
 									<tr>
-										<td><a href="#" class="btn bg-orange"><span
+										<td><a href="${contextRoot}/show/all/products" class="btn bg-orange"><span
 												class="glyphicon glyphicon-chevron-left"></span> Continue
 												Shopping</a></td>
 										<td colspan="2" class="hidden-xs"></td>
